@@ -77,14 +77,15 @@ Things you may want to cover:
 
 ## delivery_addresses テーブル
 
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| zip_cpde      | string  | null: false |
-| area_id       | integer | null: false |
-| municipality  | string  | null: false |
-| address       | string  | null: false |
-| building_name | string  |             |
-| phone_number  | string  | null: false |
+| Column        | Type       | Options     |
+| ------------- | ---------- | ----------- |
+| zip_cpde      | string     | null: false |
+| area_id       | integer    | null: false |
+| municipality  | string     | null: false |
+| address       | string     | null: false |
+| building_name | string     |             |
+| phone_number  | string     | null: false |
+| purchase      | references | foreign_key: true|
 
 
 ### Association
