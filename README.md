@@ -58,7 +58,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to: user
-- has_one: purchases
+- has_one: purchase
 
 
 ## purchases テーブル
@@ -73,20 +73,20 @@ Things you may want to cover:
 
 - belongs_to: user
 - belongs_to: item
-- has_one: delivery_addreses
+- has_one: delivery_address
 
 ## delivery_addresses テーブル
 
 | Column        | Type    | Options     |
 | ------------- | ------- | ----------- |
 | zip_cpde      | string  | null: false |
-| perfecture    | string  | null: false |
+| area_id       | integer | null: false |
 | municipality  | string  | null: false |
 | address       | string  | null: false |
 | building_name | string  |             |
 | phone_number  | string  | null: false |
-|
+
 
 ### Association
 
-- belongs_to: purchases
+- belongs_to: purchase
