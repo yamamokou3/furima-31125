@@ -25,16 +25,16 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column      | Type    | Options     |
-| ----------- | ------- | ----------- |
-| nickname    | string  | null: false |
-| email       | string  | null: false |
-| password    | string  | null: false |
-| first_name  | string  | null: false |
-| last_name   | string  | null: false |
-| first_name  | string  | null: false |
-| last_name   | string  | null: false |
-| birthday_id | integer | null: false |
+| Column                | Type    | Options     |
+| --------------------- | ------- | ----------- |
+| nickname              | string  | null: false |
+| email                 | string  | null: false |
+| encrypted_password    | string  | null: false |
+| first_name            | string  | null: false |
+| last_name             | string  | null: false |
+| first_name            | string  | null: false |
+| last_name             | string  | null: false |
+| birthday              | date    | null: false |
 
 ### Association
 
@@ -43,22 +43,23 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column      | Type    | Options     |
-| ----------- | ------- | ----------- |
-| name        | string  | null: false |
-| description | string  | null: false |
-| categroy_id | integer | null: false |
-| status_id   | integer | null: false |
-| burden_id   | integer | null: false |
-| area_id     | integer | null: false |
-| days_id     | integer | null: false |
-| price       | integer | null: false |
+| Column      | Type     | Options     |
+| ----------- | -------- | ----------- |
+| name        | string   | null: false |
+| description | text     | null: false |
+| categroy_id | integer  | null: false |
+| status_id   | integer  | null: false |
+| burden_id   | integer  | null: false |
+| area_id     | integer  | null: false |
+| days_id     | integer  | null: false |
+| price       | integer  | null: false |
+| user        | references | foreign_key: true |
 
 ### Association
 
-- belongs_to: users
+- belongs_to: user
 - has_one: purchases
-- has_one: delivery_addreses
+
 
 ## purchases テーブル
 
@@ -70,22 +71,22 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to: users
-- belongs_to: items
+- belongs_to: user
+- belongs_to: item
 - has_one: delivery_addreses
 
 ## delivery_addresses テーブル
 
 | Column        | Type    | Options     |
 | ------------- | ------- | ----------- |
-| zip_cpde      | integer | null: false |
+| zip_cpde      | string  | null: false |
 | perfecture    | string  | null: false |
 | municipality  | string  | null: false |
 | address       | string  | null: false |
 | building_name | string  |             |
-| phone_number  | integer | null: false |
+| phone_number  | string  | null: false |
+|
 
 ### Association
 
 - belongs_to: purchases
-- belongs_to: items
