@@ -4,7 +4,7 @@ class UserPurchase
 
 
   with_options presence: true do
-    validates :token
+    validates :token 
     validates :user_id
     validates :item_id
     validates :zip_cpde, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
