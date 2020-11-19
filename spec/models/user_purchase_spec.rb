@@ -6,6 +6,9 @@ RSpec.describe UserPurchase, type: :model do
     @user_purchase = FactoryBot.build(:user_purchase)
   end
 
+  it '全ての情報が登録できること' do
+    expect(@user_purchase).to be_valid
+  end
   it 'tokenが空だと登録できない' do
     @user_purchase.token = nil
     @user_purchase.valid?
