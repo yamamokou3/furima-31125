@@ -5,6 +5,8 @@ class UserPurchase
 
   with_options presence: true do
     validates :token
+    validates :user_id
+    validates :item_id
     validates :zip_cpde, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
     validates :area_id, numericality: { other_than: 1 }
     validates :municipality, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."}
